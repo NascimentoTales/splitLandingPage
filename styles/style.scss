@@ -1,0 +1,172 @@
+$backGroundLeft: rgba(87, 84, 236, 0.7);
+$backGroundRight: rgba(43, 43, 43, 0.8);
+$backGroundLeftHover: rgba(87, 84, 236, 1);
+$backGroundRightHover: rgba(28, 122, 28, 1);
+// $hoverwidth: 75%;
+// $otherwidth: 25%;
+$speed: 1000ms;
+
+
+@mixin hoverWidth {
+    width: 75%;
+}
+@mixin otherWidth {
+    width: 25%;
+    h1{
+        font-size: 2.5rem;
+    }
+}
+
+*{
+    
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lato', sans-serif; 
+    li{
+        list-style: none;
+    }  
+    a{
+        text-decoration: none;
+        color: black;
+    }
+}
+body{
+    overflow: hidden;
+    height: 100vh;
+
+    .container{
+        position: relative;
+        width: 100%;
+        height: 100%;
+        background: #333;
+        overflow: hidden;
+
+        h1{
+            font-size: 4rem;
+            color: #fff;
+            position: absolute;
+            top: 20%;
+            left: 50%;
+            transform: translateX(-50%);
+            white-space: nowrap; //não deixa quebrar a linha
+
+        }
+        
+        .btn{
+            position: absolute;
+            top: 40%;
+            left: 50%;
+            transform: translateX(-50%);
+            border: #fff solid 0.2rem;
+            padding: 1.5rem;
+            width: 15rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            color: #fff;
+            font-size: 1rem;
+            text-transform: uppercase;
+        }
+        .split{
+            position: absolute;
+            width: 50%;
+            height: 100%;
+            top: 0;
+        }
+        .left{
+            left: 0;
+            background: url('https://raw.githubusercontent.com/bradtraversy/50projects50days/master/split-landing-page/ps.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            // background-position: center;
+            .btn:hover{
+                background-color: $backGroundLeftHover;
+                border-color: $backGroundLeftHover;
+            }
+        }
+        .left::before{
+            background-color: $backGroundLeft;
+            width: 100%;
+            content: '';
+            position: absolute;
+            height: 100%;
+        }
+        .right{
+            right: 0;
+            background: url('https://raw.githubusercontent.com/bradtraversy/50projects50days/master/split-landing-page/xbox.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            .btn:hover{
+                background-color: $backGroundRightHover;
+                border-color: $backGroundRightHover;
+            }
+        }
+        .right::before{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            content: '';
+            background-color: $backGroundRight;
+        }
+        .left, .left::before, .right, .right::before {
+            transition: all $speed ease-in-out; 
+        }
+        
+        
+        
+    }
+    .hover-left .left{
+        @include hoverWidth;
+    }
+    .hover-left .right{
+        @include otherWidth;
+    }
+
+    .hover-right .right{
+        @include hoverWidth;
+    }
+    .hover-right .left{
+        @include otherWidth;
+    }
+    
+}
+@media(max-width: 800px){
+    body{
+        .container{
+            
+            h1{
+                font-size: 2rem;
+            }
+            .btn{
+                width: 10rem;
+                padding: 1rem;
+            }
+        }
+       
+        .hover-left .right{
+            h1{
+                opacity: 0;
+                transition: 0.5s;
+
+            }
+            .btn{
+                opacity: 0;
+                transition: 0.5s;
+
+            }
+        }
+        .hover-right .left{
+            h1{
+                opacity: 0;
+                transition: 0.5s;
+
+            }
+            .btn{
+                opacity: 0;
+                transition: 0.5s;
+            }
+        }
+    }
+}

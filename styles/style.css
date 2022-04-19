@@ -1,0 +1,171 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: 'Lato', sans-serif;
+}
+
+* li {
+  list-style: none;
+}
+
+* a {
+  text-decoration: none;
+  color: black;
+}
+
+body {
+  overflow: hidden;
+  height: 100vh;
+}
+
+body .container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: #333;
+  overflow: hidden;
+}
+
+body .container h1 {
+  font-size: 4rem;
+  color: #fff;
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  white-space: nowrap;
+}
+
+body .container .btn {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  border: #fff solid 0.2rem;
+  padding: 1.5rem;
+  width: 15rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+  color: #fff;
+  font-size: 1rem;
+  text-transform: uppercase;
+}
+
+body .container .split {
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  top: 0;
+}
+
+body .container .left {
+  left: 0;
+  background: url("https://raw.githubusercontent.com/bradtraversy/50projects50days/master/split-landing-page/ps.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+body .container .left .btn:hover {
+  background-color: #5754ec;
+  border-color: #5754ec;
+}
+
+body .container .left::before {
+  background-color: rgba(87, 84, 236, 0.7);
+  width: 100%;
+  content: '';
+  position: absolute;
+  height: 100%;
+}
+
+body .container .right {
+  right: 0;
+  background: url("https://raw.githubusercontent.com/bradtraversy/50projects50days/master/split-landing-page/xbox.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+body .container .right .btn:hover {
+  background-color: #1c7a1c;
+  border-color: #1c7a1c;
+}
+
+body .container .right::before {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  content: '';
+  background-color: rgba(43, 43, 43, 0.8);
+}
+
+body .container .left, body .container .left::before, body .container .right, body .container .right::before {
+  -webkit-transition: all 1000ms ease-in-out;
+  transition: all 1000ms ease-in-out;
+}
+
+body .hover-left .left {
+  width: 75%;
+}
+
+body .hover-left .right {
+  width: 25%;
+}
+
+body .hover-left .right h1 {
+  font-size: 2.5rem;
+}
+
+body .hover-right .right {
+  width: 75%;
+}
+
+body .hover-right .left {
+  width: 25%;
+}
+
+body .hover-right .left h1 {
+  font-size: 2.5rem;
+}
+
+@media (max-width: 800px) {
+  body .container h1 {
+    font-size: 2rem;
+  }
+  body .container .btn {
+    width: 10rem;
+    padding: 1rem;
+  }
+  body .hover-left .right h1 {
+    opacity: 0;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+  }
+  body .hover-left .right .btn {
+    opacity: 0;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+  }
+  body .hover-right .left h1 {
+    opacity: 0;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+  }
+  body .hover-right .left .btn {
+    opacity: 0;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+  }
+}
+/*# sourceMappingURL=style.css.map */
